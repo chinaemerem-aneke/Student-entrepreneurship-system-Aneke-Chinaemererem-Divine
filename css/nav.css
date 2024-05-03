@@ -1,0 +1,211 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary1: #f8842b;;
+    --dark-primary: #833900;;
+    --secondary: #FF6922;
+    /* --light: #EFFDF5;
+    --dark: #0E2E50; */
+    --black: #000;
+    --white: #fff;
+
+    --primary: #7335b7;
+    --primary2: #f8842b;
+
+    /* Fonts */
+    --ff-poppins: "Poppins", sans-serif;
+    --ff-roboto: "Roboto", sans-serif;
+}
+
+body {
+    font-family: var(--ff-poppins);
+}
+
+.navbar {
+    /* position: static; */
+    width: 100vw;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .09);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.logo {
+    font-family: var(--ff-poppins);
+    font-size: 1rem;
+    font-weight: 900;
+    user-select: none;
+
+    /* border: #FF6922 solid 1px; */
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-item a {
+    transition: 0.7s ease;
+}
+
+li a,
+.logo {
+    color: var(--black);
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    color: var(--primary);
+}
+
+.sign-up {
+    color: var(--white);
+    background: var(--primary);
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    position: relative;
+}
+
+.nav-item > .sign-up:hover {
+    color: var(--white);
+    background: var(--dark-primary);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    position: relative;
+    right: .5rem;
+    display: block;
+    width: 25px;
+    background: var(--black);
+    height: .2em;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Market additional CSS causing havoc */
+#content form {
+	max-width: 400px;
+	width: 100%;
+	margin-left: auto;
+}
+#content form .form-input {
+	display: flex;
+	align-items: center;
+	height: 36px;
+}
+#content form .form-input input {
+	flex-grow: 1;
+	padding: 0 16px;
+	height: 100%;
+	border: var(--light-blue) 1px solid;
+	background: var(--grey);
+	border-radius: 36px 0 0 36px;
+	outline: none;
+	width: 100%;
+	color: var(--dark);
+}
+
+#content form .form-input input:focus {
+	border: var(--blue) 1px solid;
+}
+
+#content form .form-input button {
+	width: 36px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--blue);
+	color: var(--light);
+	font-size: 18px;
+	border: none;
+	outline: none;
+	border-radius: 0 36px 36px 0;
+	cursor: pointer;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg); 
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: 100%;
+        top: 70px;
+        gap: 0;
+        z-index: 9999;
+        flex-direction: column;
+        background-color: var(--black);
+        width: 100%;
+        transition: 0.3s;
+        align-items: flex-start;
+    }
+
+    .nav-item {
+        margin: 1rem 0;
+    }
+
+    .nav-item a {
+        margin: 1rem;
+        color: var(--white);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .sign-up {
+        color: var(--white);
+        background: none;
+        padding: 0;
+    }
+    
+    .nav-item > .sign-up:hover {
+        color: var(--primary);
+        background: none;
+    }
+
+    .blur-effect {
+        filter: blur(3px);
+    }
+}
+
